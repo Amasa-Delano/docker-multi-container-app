@@ -12,7 +12,7 @@ before_install:
 #primary test running section; if any of the scripts exit with status other than 0 travis assumes the build fails
 script:
     #the -- --coverage makes the test exit
-  - docker run jackdough/react-test npm test -- --coverage
+  - docker run -e CI=true jackdough/react-test npm test
 
 #build production versions of these images from the Dockerfile
 after_success:
